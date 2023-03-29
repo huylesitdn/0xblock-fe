@@ -1,0 +1,43 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - n 16.14.2
+
+  pre_build:
+    commands:
+      - echo Prebuild command
+      - node -v
+      - npm -v
+      - npm install --global yarn
+      - echo Yarn installed!
+      - yarn
+      - printenv
+
+  build:
+    commands:
+      - echo Start build ...
+      - yarn build
+      - echo Build done!
+      - echo S3 Bucket URI s3://$BUCKET_NAME/
+      - echo Cloudfront ID $DISTRIBUTION_ID
+      - echo Start sync to S3 and invalidate CF
+      - aws s3 sync "./build" "s3://$BUCKET_NAME/"
+      - echo Synced to s3://$BUCKET_NAME/
+      - aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths '/*'
+      - echo Created invalidate cloudfront $DISTRIBUTION_ID
+
+  post_build:
+    commands:
+      - echo Post build
+      - echo Done
+
+    finally:
+      - echo Post build finally
+
+artifacts:
+  files:
+    - build/**/*

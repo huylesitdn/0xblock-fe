@@ -1,0 +1,101 @@
+{
+  "name": "ringfi-fe",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "11.7.1",
+    "@emotion/styled": "11.6.0",
+    "@mui/icons-material": "5.2.5",
+    "@mui/material": "5.2.7",
+    "@mui/styled-engine-sc": "5.1.0",
+    "@reduxjs/toolkit": "1.6.2",
+    "@sentry/react": "6.17.9",
+    "@sentry/tracing": "6.17.9",
+    "@traderjoe-xyz/sdk": "1.5.9",
+    "@types/jest": "27.0.1",
+    "@types/node": "16.7.13",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "17.0.9",
+    "@types/react-lottie": "1.2.6",
+    "@types/react-router-dom": "5.3.2",
+    "@types/react-slick": "0.23.8",
+    "@types/styled-components": "5.1.19",
+    "@web3-react/core": "6.1.9",
+    "@web3-react/injected-connector": "6.0.7",
+    "@web3-react/walletconnect-connector": "6.2.13",
+    "autoprefixer": "10.4.0",
+    "axios": "0.24.0",
+    "bignumber.js": "9.0.1",
+    "ethereum-multicall": "2.10.0",
+    "ethers": "5.6.2",
+    "graphql": "16.3.0",
+    "lodash": "4.17.21",
+    "moment": "2.29.2",
+    "moment-timezone": "0.5.34",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-hook-form": "7.22.5",
+    "react-icons": "4.3.1",
+    "react-lottie": "1.2.3",
+    "react-redux": "7.2.6",
+    "react-router-dom": "5.3.0",
+    "react-scripts": "4.0.3",
+    "react-slick": "0.28.1",
+    "react-toastify": "8.1.0",
+    "recharts": "2.1.8",
+    "slick-carousel": "1.8.1",
+    "styled-components": "5.3.3",
+    "typescript": "4.4.2",
+    "unique-names-generator": "4.6.0",
+    "urql": "2.2.0",
+    "web-vitals": "2.1.0",
+    "web3": "1.6.1",
+    "yup": "0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts --max-old-space-size=4096 start",
+    "build": "react-scripts --max-old-space-size=8192 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --color --max-warnings=0",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn lint"
+    ],
+    "./src/**": [
+      "yarn format"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.9.0",
+    "@typescript-eslint/parser": "5.9.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "husky": "7.0.4",
+    "prettier": "2.5.1"
+  }
+}

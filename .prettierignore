@@ -1,0 +1,10 @@
+node_modules/
+dist
+**/scripts/*.js
+*.css
+*.svg
+*.png
+*.gif
+*.woff
+*.woff2
+src/reportWebVitals.ts

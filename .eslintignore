@@ -1,0 +1,7 @@
+node_modules/
+dist
+build
+**/scripts/*.js
+*.css
+*.svg
+src/reportWebVitals.ts

@@ -1,0 +1,41 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;
+  /* font-family: 'Roboto', sans-serif; */
+  overflow: hidden;
+}
+
+main {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+
+main::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: none;
+}
+
+main::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: none;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: #3864FF;
+  border-radius: 10px;
+}
+
+.lineReward .recharts-layer {
+  stroke-linejoin: bevel;
+}
+
+iframe {
+  display: none;
+}

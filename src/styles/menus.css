@@ -1,0 +1,421 @@
+.grid-item {
+  color: #fff;
+  /* padding: 3.5em 1em; */
+  /* font-size: 1em; */
+  /* font-weight: 700; */
+}
+
+.main {
+  color: lighten(#555, 25%);
+  background-color: lighten(#efefef, 60%);
+  grid-area: main;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  /* transform: scale(0.98); */
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.items.active {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  /* transform: scale(1); */
+}
+
+.item {
+  display: inline-block;
+
+
+}
+
+
+/* ================================ */
+
+.scroll-area {
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-area .scroll-area__body {
+  position: relative;
+  z-index: 5;
+  padding-bottom: 24px;
+}
+
+.scroll-area--horizontal .scroll-area__body {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroll-area--horizontal .scroll-area__body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.scroll-area__column {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  /* text-align: center;
+	background: #fff; */
+}
+
+
+/* ----------------- */
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 217px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.button-cover {
+  /* box-shadow: 0 10px 20px -8px #c5d6d6; */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.button-cover:before {
+  counter-increment: button-counter;
+  content: counter(button-counter);
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  color: #d7e3e3;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 217px;
+  height: 40px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  border-radius: 2px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background: rgba(243, 243, 243, 0.56);
+  border-radius: 12px;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button-10 .knobs:before,
+.button-10 .knobs:after,
+.button-10 .knobs span {
+  position: absolute;
+  top: 2px;
+  width: 107px;
+  height: 36px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.button-11 .knobs:before,
+.button-11 .knobs:after,
+.button-11 .knobs span {
+  position: absolute;
+  top: 2px;
+  width: 107px;
+  height: 36px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.button-10 .knobs:before {
+  content: "";
+  left: 2px;
+  /* background-color: #03a9f4; */
+  background: #FFFFFF;
+  box-shadow: 0px 13px 27px rgba(26, 38, 70, 0.09);
+  border-radius: 11px;
+}
+
+.button-10 .knobs:after {
+  content: "Market cap";
+  right: 2px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #666971;
+}
+
+.button-11 .knobs:after {
+  content: "My Pools";
+  right: 2px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(41, 50, 71, 0.46);
+}
+.lightMode .button-11 .knobs:after {
+  color: rgba(41, 50, 71, 0.46);
+}
+
+.darkMode .button-11 .knobs:after {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.button-10 .knobs span {
+  display: inline-block;
+  left: 2px;
+  /* color: #fff; */
+  color: #3864FF;
+  z-index: 1;
+}
+
+.button-11 .knobs span {
+  display: inline-block;
+  left: 2px;
+  /* color: #fff; */
+  color: #293247;
+  z-index: 1;
+}
+
+.button-10 .checkbox:checked+.knobs span {
+  color: #666971;
+}
+
+.lightMode .button-11 .checkbox:checked+.knobs span {
+  color: rgba(41, 50, 71, 0.46);
+}
+
+.darkMode .button-11 .checkbox:checked+.knobs span {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.button-10 .checkbox:checked+.knobs:before {
+  left: 108px;
+  background: #FFFFFF;
+  box-shadow: 0px 13px 27px rgba(26, 38, 70, 0.09);
+  border-radius: 11px;
+}
+
+.button-10 .checkbox:checked+.knobs:after {
+  color: #3864FF;
+}
+
+.button-11 .checkbox:checked+.knobs:after {
+  color: #293247;
+}
+
+.button-10 .checkbox:checked~.layer {
+  background-color: rgba(243, 243, 243, 0.56);
+}
+
+.showMobile {
+  display: none;
+}
+
+.showDesktop {
+  display: inline-block;
+}
+
+.darkMode .layer {
+  background: #1E1E1E;
+}
+
+.darkMode .button-10 .knobs:before {
+  background: #282A34;
+}
+
+.darkMode .button-10 .checkbox:checked+.knobs:after {
+  color: #fff;
+}
+
+.darkMode .button-10 .knobs span {
+  color: #fff;
+}
+
+.darkMode .button-10 .checkbox:checked~.layer {
+  background-color: #1E1E1E;
+}
+
+.darkMode .button-10 .checkbox:checked+.knobs:before {
+  background: #282A34;
+}
+
+
+.darkMode .button-11 .layer {
+  background: #171717;
+}
+
+.darkMode .button-11 .knobs:before {
+  background: #252525;
+}
+
+.darkMode .button-11 .knobs:after{
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.darkMode .button-11 .knobs:before{
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.darkMode .button-11 .checkbox:checked+.knobs span{
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.darkMode .button-11 .checkbox:checked+.knobs:after {
+  color: #fff;
+}
+
+.darkMode .button-11 .knobs span {
+  color: #fff;
+}
+
+.darkMode .button-11 .checkbox:checked~.layer {
+  background-color: #171717;
+}
+
+.darkMode .button-11 .checkbox:checked+.knobs:before {
+  background: #252525;
+}
+
+@media(max-width: 600px) {
+  .showDesktop {
+    display: none;
+  }
+
+  .showMobile {
+    display: block;
+  }
+
+  .toggle-button-cover {
+    margin: 0 auto 33px;
+  }
+}
+
+
+.MuiTooltip-popper[data-popper-placement*="bottom"] .css-1k51tf5-MuiTooltip-tooltip {
+  margin-top: -10px !important;
+}
+
+.MuiTooltip-popper[data-popper-placement*="left"] .css-1k51tf5-MuiTooltip-tooltip {
+  margin-right: 6px !important;
+}
+
+.MuiTooltip-popper[data-popper-placement*="right"] .css-1k51tf5-MuiTooltip-tooltip{
+  margin-left: 0px !important;
+}
+
+.darkModeChart .recharts-text  {
+  fill: #fff !important;
+  color: #fff !important;
+
+}
+
+.lightModeChart .recharts-text  {
+  fill: #293247 !important;
+  color: #293247 !important;
+
+}
+
+@media(max-width: 600px) {
+  .MuiTooltip-popper[data-popper-placement*="right"] .css-1k51tf5-MuiTooltip-tooltip{
+    margin-left: 40px !important;
+  }
+
+
+  .tooltipMonths[data-popper-placement*="right"] .MuiTooltip-tooltipPlacementRight{
+    margin-left: -69px !important;
+    margin-top: -40px;
+  }
+
+
+  .MuiTooltip-popper[data-popper-placement*="bottom"] .css-1k51tf5-MuiTooltip-tooltip{
+    margin-top: -8px !important;
+  }
+
+  .MuiTooltip-popper[data-popper-placement*="bottom"] .MuiTooltip-arrow {
+    top: 0px !important;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
